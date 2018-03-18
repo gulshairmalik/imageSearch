@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset='utf-8')
+        title Image Search API
+        link(href='/css/bootstrap.min.css', rel='stylesheet')
+    body
+        .container
+            .jumbotron
+                h1.text-center imageSearch API 
+            h2.text-info imageSearch API:
+            p(style="font-size:15px;") This is a simple image search API, developed in Express.Js.
+            h2.text-info API Link:
+            a(href="https://url-shortner55.herokuapp.com/short/?url=https://www.google.com",style="font-size:18px;",target="_blank") https://url-shortner55.herokuapp.com/api?q=yourSearchQuery 
+            h2.text-info How to use this API:
+            p(style="font-size:15px;") Use of this API is very simple, only you have to write a search query as a query string for image search in the API link and the API will return a JSON response for the set of images related to your searchQuery.
+            p(style="font-size:15px") For example, if you provide a link such as:<br><code>https://url-shortner55.herokuapp.com/api?q=cats&amp;offset=1</code><br><br>It will return JSON response of 1st page (e.g. offset=1) like <code>{"title":"....","image_url":"....","page_url":"....","success":"...."}</code>
+            p(style="font-size:15px") If you want to get a JSON response of recent history then you have to make a get request to this link such as:<br><code>https://url-shortner55.herokuapp.com/api/latest</code><br>It will return JSON response of recent searchHistory like <code>{"search_term":"....","date":"...."}</code>
+            br
+            br
+            center
+                img(src="/img/g.jpg",class="img img-responsive img-circle",style="width:50px;height:50px;")
+                a(href="https://github.com/gulshairmalik",target="_blank",class="text-center",style="font-size:18px;text-decoration:none;") Gulshair Malik
