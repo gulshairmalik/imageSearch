@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const path = require('path');
 const request = require('request');
 const port = process.env.PORT || 3000;
-const db_url = process.env.DB_URL || 'mongodb://gulshairmalik:7861745gul@ds117759.mlab.com:17759/image-search';
+const db_url = process.env.DB_URL;
+const client_id = process.env.CLIENT_ID;
 const app = express();
 
 
@@ -41,7 +42,7 @@ app.get('/api',function(req, res){
     }
 
     //Fetching Data from API
-    request.get('https://api.imgur.com/3/gallery/search/top/all/'+offset+'?q='+searchQuery+'&client_id=0138b51fc2a3649', (error, response, result) => {
+    request.get('https://api.imgur.com/3/gallery/search/top/all/'+offset+'?q='+searchQuery+'&client_id='+client_id, (error, response, result) => {
         if(error) {
             return console.dir(error);
         }
